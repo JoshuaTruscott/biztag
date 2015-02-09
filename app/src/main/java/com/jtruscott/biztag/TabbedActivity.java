@@ -108,12 +108,10 @@ public class TabbedActivity extends ActionBarActivity implements ActionBar.TabLi
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
         // When the given tab is selected, switch to the corresponding page in
         // the ViewPager.
-        finish();
         mViewPager.setCurrentItem(tab.getPosition());
         LoginFragment f = new LoginFragment();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.commit();
-        checkFirstRun();
     }
 
     @Override
