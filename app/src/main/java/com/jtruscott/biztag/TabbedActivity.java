@@ -113,6 +113,7 @@ public class TabbedActivity extends ActionBarActivity implements ActionBar.TabLi
         LoginFragment f = new LoginFragment();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.commit();
+        checkFirstRun();
     }
 
     @Override
