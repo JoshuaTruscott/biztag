@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <LinearLayout android:orientation="vertical" android:padding="10dp" android:layout_height="fill_parent" android:layout_width="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:textStyle="bold" android:text="@string/version0.2"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="@string/version0.2_updates"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:textStyle="bold" android:text="@string/version0.1" android:layout_marginTop="10dp"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="@string/version0.1_updates"/>
+
+</LinearLayout>
