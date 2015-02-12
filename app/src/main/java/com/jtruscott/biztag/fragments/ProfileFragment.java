@@ -1,13 +1,14 @@
-package com.jtruscott.biztag;
+package com.jtruscott.biztag.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.jtruscott.biztag.R;
 import com.jtruscott.biztag.library.UserFunctions;
 
 
@@ -23,12 +24,15 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        if (new UserFunctions().isUserLoggedIn(getActivity().getApplicationContext())) {
-            return inflater.inflate(R.layout.fragmenttab1, container, false);
-        } else {
-            // user is not logged in show login screen
-            return inflater.inflate(R.layout.fragmenttab3, container, false);
-        }
+        View v = inflater.inflate(R.layout.fragment_profile, container, false);
+//            Button mButton = (Button) v.findViewById(R.id.registerLinkButton);
+//            mButton.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Log.i("dBug","onClick() called :)");
+//                }
+//            });
+            return v;
 
     }
 //    public void logoutClicked(View v){

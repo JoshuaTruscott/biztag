@@ -1,8 +1,10 @@
-package com.jtruscott.biztag;
+package com.jtruscott.biztag.library;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
+
+import com.jtruscott.biztag.R;
 
 public class TabListener implements ActionBar.TabListener {
 

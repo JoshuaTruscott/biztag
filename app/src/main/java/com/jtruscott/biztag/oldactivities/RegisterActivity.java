@@ -3,7 +3,7 @@
  * URL: www.androidhive.info
  * twitter: http://twitter.com/ravitamada
  * */
-package com.jtruscott.biztag;
+package com.jtruscott.biztag.oldactivities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.jtruscott.biztag.R;
 import com.jtruscott.biztag.library.DatabaseHandler;
 import com.jtruscott.biztag.library.UserFunctions;
 
