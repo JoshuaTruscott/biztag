@@ -12,5 +12,8 @@
     <string name="version0.2">Version: Pre Release v0.2</string>
     <string name="version0.2_updates">- Add tablet support\n- More coming soon</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="register_title">Register for your\nfree biztag account</string>
+    <string name="already_registered">Already registered? Click here to login</string>
+    <string name="register">Register</string>
 
 </resources>

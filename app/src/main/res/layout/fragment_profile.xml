@@ -3,31 +3,11 @@
     android:layout_height="match_parent" tools:context="com.jtruscott.biztag.fragments.ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/textView2"
-        android:layout_gravity="center" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:layout_gravity="left|top" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/btnLogout"
-        android:layout_gravity="left|center_vertical" />
-
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/profileListView"
+        android:layout_gravity="right|center_vertical"
+        android:scrollingCache="true" />
 </FrameLayout>
