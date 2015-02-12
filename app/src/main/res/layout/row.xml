@@ -4,8 +4,10 @@
     android:layout_height="match_parent" android:id="@+id/rowLayout">
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
-        android:layout_gravity="right" />
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center_horizontal"
+        android:inputType="text"/>
 </LinearLayout>
