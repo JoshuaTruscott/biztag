@@ -10,6 +10,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.HashMap;
 
@@ -31,6 +32,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	private static final String KEY_EMAIL = "email";
 	private static final String KEY_UID = "uid";
 	private static final String KEY_CREATED_AT = "created_at";
+    private static final String KEY_INSTAGRAM = "instagram";
+
+    private static final String[] COLUMNS = {KEY_ID,KEY_NAME,KEY_EMAIL,KEY_UID,KEY_CREATED_AT, KEY_INSTAGRAM};
 
 	public DatabaseHandler(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -44,7 +48,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				+ KEY_NAME + " TEXT,"
 				+ KEY_EMAIL + " TEXT UNIQUE,"
 				+ KEY_UID + " TEXT,"
-				+ KEY_CREATED_AT + " TEXT" + ")";
+				+ KEY_CREATED_AT + " TEXT,"
+                + KEY_INSTAGRAM + " TEXT"+ ")";
 		db.execSQL(CREATE_LOGIN_TABLE);
 	}
 
@@ -69,7 +74,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		values.put(KEY_EMAIL, email); // Email
 		values.put(KEY_UID, uid); // Email
 		values.put(KEY_CREATED_AT, created_at); // Created At
-
+        values.put(KEY_INSTAGRAM,"");
 		// Inserting Row
 		db.insert(TABLE_LOGIN, null, values);
 		db.close(); // Closing database connection
@@ -86,11 +91,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(selectQuery, null);
         // Move to first row
         cursor.moveToFirst();
+        Log.i("Test",String.valueOf(cursor.getColumnCount()));
         if(cursor.getCount() > 0){
         	user.put("name", cursor.getString(1));
         	user.put("email", cursor.getString(2));
         	user.put("uid", cursor.getString(3));
-        	user.put("created_at", cursor.getString(4));
+            user.put("created_at", cursor.getString(4));
+            user.put("instagram",cursor.getString(5));
+
+
         }
         cursor.close();
         db.close();
@@ -115,7 +124,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	}
 	
 	/**
-	 * Re crate database
+	 * Recreate database
 	 * Delete all tables and create them again
 	 * */
 	public void resetTables(){

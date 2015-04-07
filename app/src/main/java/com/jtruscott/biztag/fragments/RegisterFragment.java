@@ -64,8 +64,8 @@ public class RegisterFragment extends Fragment {
                 try {
                     if (json.getString(KEY_SUCCESS) != null) {
                         registerErrorMsg.setText("");
-                        String res = json.getString(KEY_SUCCESS);
-                        if (Integer.parseInt(res) == 1) {
+                        String response = json.getString(KEY_SUCCESS);
+                        if (Integer.parseInt(response) == 1) {
                             // user successfully registred
                             // Store user details in SQLite Database
                             DatabaseHandler db = new DatabaseHandler(getActivity().getApplicationContext());

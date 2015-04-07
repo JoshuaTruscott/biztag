@@ -4,10 +4,36 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <ListView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/profileListView"
-        android:layout_gravity="right|center_vertical"
-        android:scrollingCache="true" />
+        android:weightSum="1">
+
+        <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="499dp"
+            android:id="@+id/profileListView"
+            android:scrollingCache="true"
+            android:layout_weight="1.03" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom">
+
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:text="@string/update_button"
+                android:id="@+id/btnUpdate" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/logout_button"
+                android:id="@+id/btnLogout" />
+        </LinearLayout>
+    </LinearLayout>
 </FrameLayout>

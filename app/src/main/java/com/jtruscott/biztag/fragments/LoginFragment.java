@@ -40,10 +40,9 @@ public class LoginFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //StrictMode fixes EditText focus issue
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-
         StrictMode.setThreadPolicy(policy);
-
 
         View v = inflater.inflate(R.layout.fragment_login, container, false);
         inputEmail = (EditText) v.findViewById(R.id.loginEmail);
@@ -51,14 +50,17 @@ public class LoginFragment extends Fragment {
         btnLogin = (Button) v.findViewById(R.id.btnLogin);
         btnLinkToRegister = (Button) v.findViewById(R.id.btnLinkToRegisterScreen);
         loginErrorMsg = (TextView) v.findViewById(R.id.login_error);
+        UserFunctions uf = new UserFunctions();
 
         btnLinkToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Go to registration fragment
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.fragment_content, new RegisterFragment());
                 ft.commit();
-                Log.i("dBug", "Register frag started");
+
             }
         });
 
@@ -68,7 +70,6 @@ public class LoginFragment extends Fragment {
                 String email = inputEmail.getText().toString();
                 String password = inputPassword.getText().toString();
                 UserFunctions userFunction = new UserFunctions();
-                Log.d("Button", "Login");
                 JSONObject json = userFunction.loginUser(email, password);
                 Log.i("JSON", json.toString());
                 // check for login response
@@ -85,6 +86,8 @@ public class LoginFragment extends Fragment {
                             // Clear all previous data in database
                             userFunction.logoutUser(getActivity().getApplicationContext());
                             db.addUser(json_user.getString(KEY_NAME), json_user.getString(KEY_EMAIL), json.getString(KEY_UID), json_user.getString(KEY_CREATED_AT));
+
+                            // Go to profile fragment
                             FragmentTransaction ft = getFragmentManager().beginTransaction();
                             ft.replace(R.id.fragment_content, new ProfileFragment());
                             ft.commit();

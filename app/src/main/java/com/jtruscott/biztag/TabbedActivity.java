@@ -54,4 +54,6 @@ public class TabbedActivity extends ActionBarActivity {
         actionBar.addTab(Tab1);
         actionBar.addTab(Tab2);
     }
+
+
 }

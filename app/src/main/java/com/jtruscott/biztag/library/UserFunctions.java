@@ -23,6 +23,7 @@ public class UserFunctions {
 	
 	private static String login_tag = "login";
 	private static String register_tag = "register";
+    private static String lookup_tag = "lookup";
 	
 	// constructor
 	public UserFunctions(){
@@ -45,6 +46,16 @@ public class UserFunctions {
 		// Log.e("JSON", json.toString());
 		return json;
 	}
+
+    public JSONObject getUser(String id){
+        List<NameValuePair> params = new ArrayList<NameValuePair>();
+        params.add(new BasicNameValuePair("tag", lookup_tag));
+        params.add(new BasicNameValuePair("id", id));
+        JSONObject json = jsonParser.getJSONFromUrl(loginURL, params);
+        // return json
+        // Log.e("JSON", json.toString());
+        return json;
+    }
 	
 	/**
 	 * function make Login Request
